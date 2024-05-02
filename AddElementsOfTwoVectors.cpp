@@ -10,9 +10,9 @@ int main(){
     cout<<v.capacity()<<endl;
     cout<<v.size()<<endl;
     v.push_back(10);
-    cout<<v.size()<<endl;
-    cout<<v.capacity()<<endl;
-    v = {1, 6, 4, 7, 10, 11};
+    cout<<"Size:"<<v.size()<<endl;
+    cout<<"Capacity:"<<v.capacity()<<endl;
+    v.push_back(11);
       cout<<"Size:"<<v.size()<<endl;
     cout<<"Capacity:"<<v.capacity()<<endl;
     vector<int> v1 = {1, 6, 4, 7, 1, 10};
