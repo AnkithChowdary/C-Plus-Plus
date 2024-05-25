@@ -13,10 +13,10 @@ int main(){
   int n;
   cin>>n;
   vector<int>v;
-  
+  int k;
   for(int i=0;i<n;i++){
-int k;
-cout<<"Enter the number: "<<endl;
+
+
 cin>>k;
 v.push_back(k);
   }
@@ -35,9 +35,9 @@ v.push_back(k);
    vector<int>v2(5,1);
    print(v2);
  
-  return 0;
+  
 
-int arr[]={1,3,4,9};
+
   // copying a vector to a vector
   vector<int>v3(v2);
   
@@ -61,24 +61,18 @@ cout<<v.capacity()<<endl;
 
   vector <int> v4;
   cout<<"Capacity  Size"<<endl;
-  v.push_back(10);
-  cout<<v.capacity();
-  cout<<v.size()<<endl;
-  v.push_back(20);
-  cout<<v.capacity()<<endl;      //Same as arraylist in java
-  cout<<v.size()<<endl;
-  v.push_back(30);
-  cout<<v.capacity()<<endl;     
-  cout<<v.size()<<endl;
-  v.push_back(40);
-  cout<<v.capacity()<<endl;
-  cout<<v.size()<<endl;
-  v.push_back(50);
-  cout<<v.capacity()<<endl;
-  cout<<v.size()<<endl;
-  v.push_back(60);
-  cout<<v.capacity()<<endl;
-  cout<<v.size()<<endl;
+  v4.push_back(10);
+  cout<<v4.capacity()<<"         "<<v4.size()<<endl;
+  v4.push_back(20);
+   cout<<v4.capacity()<<"         "<<v4.size()<<endl;
+  v4.push_back(30);
+   cout<<v4.capacity()<<"         "<<v4.size()<<endl;
+  v4.push_back(40);
+   cout<<v4.capacity()<<"         "<<v4.size()<<endl;
+  v4.push_back(50);
+   cout<<v4.capacity()<<"         "<<v4.size()<<endl;
+  v4.push_back(60);
+   cout<<v4.capacity()<<"         "<<v4.size()<<endl;
 
 
 }
