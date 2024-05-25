@@ -49,9 +49,36 @@ int arr[]={1,3,4,9};
   for(auto a:v3){
     cout<<a<<" ";
   }
-
+cout<<v.capacity()<<endl;
   // Front element in vector
   cout<<v.front()<<endl;
   // last element
   cout<<v.back()<<endl;
+
+
+  v.clear();
+  cout<<v.capacity()<<endl;
+
+  vector <int> v4;
+  cout<<"Capacity  Size"<<endl;
+  v.push_back(10);
+  cout<<v.capacity();
+  cout<<v.size()<<endl;
+  v.push_back(20);
+  cout<<v.capacity()<<endl;      //Same as arraylist in java
+  cout<<v.size()<<endl;
+  v.push_back(30);
+  cout<<v.capacity()<<endl;     
+  cout<<v.size()<<endl;
+  v.push_back(40);
+  cout<<v.capacity()<<endl;
+  cout<<v.size()<<endl;
+  v.push_back(50);
+  cout<<v.capacity()<<endl;
+  cout<<v.size()<<endl;
+  v.push_back(60);
+  cout<<v.capacity()<<endl;
+  cout<<v.size()<<endl;
+
+
 }
