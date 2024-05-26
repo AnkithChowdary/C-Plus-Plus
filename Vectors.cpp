@@ -73,6 +73,6 @@ cout<<v.capacity()<<endl;
    cout<<v4.capacity()<<"         "<<v4.size()<<endl;
   v4.push_back(60);
    cout<<v4.capacity()<<"         "<<v4.size()<<endl;
-
+ 
 
 }
