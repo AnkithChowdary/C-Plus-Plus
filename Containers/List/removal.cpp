@@ -24,6 +24,8 @@ cout << "After deletion: ";
     cout << *it << " ";
     it++;
   }
-
+  cout << endl;
+li.clear();
+cout << li.size();
   return 0;
 }
