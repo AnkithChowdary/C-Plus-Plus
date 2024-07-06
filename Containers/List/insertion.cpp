@@ -12,4 +12,6 @@ int main() {
   li.insert(it,4);
 
   cout << li.back();
+  cout << li.front();
+  
 }
