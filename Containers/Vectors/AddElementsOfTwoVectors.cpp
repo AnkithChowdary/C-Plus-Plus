@@ -18,6 +18,8 @@ int main(){
     vector<int> v1 = {1, 6, 4, 7, 1, 10};
 
     cout<<accumulate(v.begin(),v.end(),0);
-      
+      //clear function
+      v.clear();
+      cout << v.size();
     return 0;
 }
