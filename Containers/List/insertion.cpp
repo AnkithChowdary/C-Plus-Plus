@@ -10,4 +10,6 @@ int main() {
   li.push_front(2);
   list<int>::iterator it=li.begin();
   li.insert(it,4);
+
+  cout << li.back();
 }
