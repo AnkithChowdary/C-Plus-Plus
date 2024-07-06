@@ -11,7 +11,7 @@ int main() {
   list<int>::iterator it=li.begin();
   li.insert(it,4);
 
-  cout << li.back();
+  cout << li.back() <<endl;
   cout << li.front();
-  
+
 }
