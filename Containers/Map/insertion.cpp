@@ -42,5 +42,8 @@ int main() {
 
    //count function which returns the count of the keys in the map(0 or 1) as keys are unique in the map
    cout << mp.count("Key");
+
+   //It is same in the case of ordered map but it's time complexity is more when compared to unordered map(O(1))
+   //ordered map follows some order and it is implemented using self balancing binary search tree and whereas unordered map is implemented using HashTable
   return 0;
 }
