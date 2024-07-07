@@ -19,6 +19,9 @@ int main() {
   mp.insert(p);
 
   //Value at key
+  cout << mp.at("Name1") << endl;
+  //Updation at key
+  mp.at("Name1")="Bhomraj";
   cout << mp.at("Name1");
 
   return 0;
