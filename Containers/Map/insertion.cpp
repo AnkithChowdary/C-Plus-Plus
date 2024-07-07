@@ -38,5 +38,9 @@ int main() {
 
   //Finding the key in the map
    (mp.find("key2")!=mp.end())?(cout << "Key found"):cout <<"Key not found";
+   cout << endl;
+
+   //count function which returns the count of the keys in the map(0 or 1) as keys are unique in the map
+   cout << mp.count("Key");
   return 0;
 }
