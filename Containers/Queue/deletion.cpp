@@ -11,5 +11,5 @@ int main() {
   q.push(10);
   q.pop();
   q.pop();
-  //There is no clear function in c++
+  //There is no clear function in c++ for queues
 }
