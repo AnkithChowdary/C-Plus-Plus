@@ -9,5 +9,6 @@ int main() {
   pq.push(50);
   pq.push(10);
   cout << pq.top();  // 50 gets printed
+  
   return 0;
 }
