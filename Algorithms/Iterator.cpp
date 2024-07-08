@@ -14,5 +14,5 @@ int main() {
   v.push_back(4);
   v.push_back(10);
   // This helps to perform  a function on a set of data
-  for_each(v.begin(),v.begin()+2,printDouble);    //Output: 4  8 
+  for_each(v.begin(),v.begin()+2,printDouble);    //Output: 4 \n 8 
 }
