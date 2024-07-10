@@ -66,9 +66,12 @@ int main() {
   cout << endl;
 
   v.push_back(1);
+  //unique only works when the duplicates are in consecutive manner
+  sort(v.begin(), v.end());
   // Removes duplicates
-  unique(v.begin(),v.end());
-  cout << "Unique Elements: ";
-  printVec(v);
+  auto ite = unique(v.begin(), v.end());
+    v.erase(ite, v.end());
+    cout << "Unique elements: ";
+    printVec(v);
   cout << endl;
 }
