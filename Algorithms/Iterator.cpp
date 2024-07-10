@@ -74,4 +74,13 @@ int main() {
     cout << "Unique elements: ";
     printVec(v);
   cout << endl;
+   v.push_back(3);
+   v.push_back(11);
+  auto a=partition(v.begin(),v.end(),checkNum);
+  cout << "The partition is divided into parts based upon predicate";
+  for(int x:v){
+    cout << x << " ";
+  }
+
+
 }
