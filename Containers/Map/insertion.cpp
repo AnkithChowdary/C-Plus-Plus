@@ -34,7 +34,7 @@ int main() {
     cout << p.first << " " << p.second <<endl;
     it++;
   }
-
+  
 
 
   //Finding the key in the map
@@ -46,5 +46,9 @@ int main() {
 
    //It is same in the case of ordered map but it's time complexity is more when compared to unordered map(O(1))
    //ordered map follows some order and it is implemented using self balancing binary search tree and whereas unordered map is implemented using HashTable
+
+    
+   //Deletion 
+   
   return 0;
 }
