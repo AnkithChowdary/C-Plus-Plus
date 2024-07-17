@@ -5,6 +5,7 @@ int applyBinarySearch(int arr[],int size, int target) {
   int s=0;
   int e=size-1;
   int mid=s+(e-s)/2;
+  while(s<=e){
   if(target==arr[mid]){
     return mid;
   }
@@ -19,6 +20,8 @@ int applyBinarySearch(int arr[],int size, int target) {
   }else{
     s=mid+2;
   }
+  mid=s+(e-s)/2;
+  }
   return -1;
 }
 
@@ -27,10 +30,6 @@ int main(){
    int size=7;
    int target=2;
 
-   bool ans=applyBinarySearch(arr,size,target);
-   if(ans==true){
-    cout <<" target found"<<endl;
-   }else {
-    cout << "Found"<< endl;
-   }
+   int ans=applyBinarySearch(arr,size,target);
+   cout << "Target Found at index: "<<ans;
 }
