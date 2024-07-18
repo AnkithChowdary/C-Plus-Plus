@@ -16,9 +16,9 @@ int applyBinarySearch(int arr[],int size, int target) {
     return mid-1;
   }
   if(target>arr[mid]){
-    e=mid-2;
-  }else{
     s=mid+2;
+  }else{
+      e=mid-2;
   }
   mid=s+(e-s)/2;
   }
@@ -28,7 +28,7 @@ int applyBinarySearch(int arr[],int size, int target) {
 int main(){
    int arr[]={10,1,40,20,50,80,70};
    int size=7;
-   int target=2;
+   int target=10;
 
    int ans=applyBinarySearch(arr,size,target);
    cout << "Target Found at index: "<<ans;
