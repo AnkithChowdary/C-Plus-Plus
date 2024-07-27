@@ -6,6 +6,5 @@ int main(){
   getline(cin,s);
   s.append(" is a string");
   cout<<s;
-  
   return 0;
 }
