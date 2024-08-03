@@ -8,7 +8,7 @@ int fastExponentiation(int a,int b){
       //Odd
       ans=ans*a;
     }
-    a=a*ans;
+    a=a*a;
     b>>=1;
   }
   return ans;
