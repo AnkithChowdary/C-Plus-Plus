@@ -19,6 +19,7 @@ void isPrime1(int n,vector<bool>&v){
     v[0]=v[1]=false;
     for(int i=2;i<=n;i++){
       if(v[i]){
+        // starts from i*i as others are already marked from 2 to i-1
         int j=i*i;
         while(j<=n){
           v[j]=false;
