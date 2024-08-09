@@ -10,7 +10,7 @@ class node{
   }
 
 };
-node* insertAtHead(int value,node* &head,node* &tail){
+void insertAtHead(int value,node* &head,node* &tail){
   node* newnode=new node(value);
   if(head == NULL && tail == NULL) {
     head=newnode;
@@ -19,7 +19,18 @@ node* insertAtHead(int value,node* &head,node* &tail){
     newnode->next=head;
     head=newnode;
   }
-  return head;
+ 
+}
+void insertAtTail(int value,node * &head,node* &tail){
+  node* newnode=new node(value);
+    if(head==NULL&&tail==NULL){
+      
+      head=newnode;
+      tail=newnode;
+    }else{
+      tail->next=newnode;   // Current last node connection with newnode
+      tail=newnode;         // Newnode is the tail
+    }
 }
 
 void printLinkedList(node* head){
@@ -32,7 +43,7 @@ void printLinkedList(node* head){
       cout << ptr->data <<"->";
       ptr=ptr->next;
     }
-    cout<<"NULL"; 
+    cout<<"NULL";
   }
 }
 
