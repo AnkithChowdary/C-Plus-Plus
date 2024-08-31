@@ -32,8 +32,26 @@ void insertAtTail(int value,node * &head,node* &tail){
       tail=newnode;         // Newnode is the tail
     }
 }
+void insertAtPosition(int position, int value, node* &head, node* tail) {
+  int length=getLength(head);
 
-void printLinkedList(node* head){
+  if(position == 1) {
+    insertAtHead(value, head, tail);
+  }
+  else if(position == length + 1){
+    insertAtTail(value, head, tail);
+  }else{
+    node* temp=head;
+    for(int i=1;i<=position-2;i++){
+      temp=temp->next;
+    }
+    node* newnode=new node(value);
+    newnode->next=temp->next;
+    temp->next=newnode;
+  }
+}
+
+void printLinkedList(node* head) {
   
   if(head == NULL){
     cout << "Linked List doesn't exist";
@@ -43,11 +61,19 @@ void printLinkedList(node* head){
       cout << ptr->data <<"->";
       ptr=ptr->next;
     }
-    cout<<"NULL\n";
+    cout << "NULL\n";
 
   }
 }
 
+int getLength(node* head){
+  int len=0;
+  node* temp=head;
+  while(temp!=NULL){
+    temp=temp->next;
+      len++;
+  }
+}
 
 int main() {
     node* head = NULL;
