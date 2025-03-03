@@ -5,6 +5,6 @@ int main(){
   string s;
   getline(cin,s);
   s.append(" is a string");
-  cout<<s;
+  cout << s << endl; // Add endl for a new line
   return 0;
 }
