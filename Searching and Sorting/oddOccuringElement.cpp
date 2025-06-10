@@ -9,23 +9,34 @@ int findingOddOccuringElement(vector<int>& arr){
  
   while(s<=e){
     int mid=s+(e-s)/2;
-    
+    cout<< "mid "<<mid<< endl;
     if(s==e){
       return s;
     }
+    // If the element is at first or last so we shouldn't go for bound checking
+    // Now in case if it lands then it will not be equal 
+    int leftVal=-1;
+    int currVal=arr[mid];
+    int rightVal=-1;
+    if(mid-1>=0)
+    leftVal=arr[mid-1];
+
+    if(mid+1<size){
+      rightVal=arr[mid+1];
+    }
     
-    if(mid-1>=0&&arr[mid]!=arr[mid-1]&&mid+1<=size-1&&arr[mid]!=arr[mid+1]){
+    if(currVal!=leftVal&&currVal!=rightVal){
     return mid;
     }
     
-      if(mid-1>=0&&arr[mid-1]==arr[mid]){
+      if(mid-1>=0&&currVal==leftVal){
         
         if((mid-1)&1){
        e=mid-1;
         }else{
          s=mid+1;
       }
-      }else if(mid+1<size&&arr[mid]==arr[mid+1]){
+      }else if(mid+1<size&&currVal==rightVal){
       if(mid&1){
        e=mid-1;
         }else{
@@ -44,7 +55,7 @@ int findingOddOccuringElement(vector<int>& arr){
 
 
 int main(){
-vector<int>arr={1,1,2,3,3,5,5,7,7,9,9,11,11};
+vector<int>arr={1,2,2,3,3};
 int ans=findingOddOccuringElement(arr);
 cout<<"ans Index:"<<ans<<endl;
 cout<<"ans element: "<<arr[ans]<<endl;
