@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-void subSequences(string s, string ans,int index){
+void subSequences(string &s, string ans,int index){
     if(index==s.length()){
         cout<<ans<<endl;
         return;

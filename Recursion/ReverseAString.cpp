@@ -15,5 +15,5 @@ int main(){
   cout<<endl;
   reverse(s,0,s.size()-1);
   cout<<s;
-  return 0;
+  return 0; 
 }
