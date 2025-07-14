@@ -32,6 +32,15 @@ void insertAtTail(int value,node * &head,node* &tail){
       tail=newnode;         // Newnode is the tail
     }
 }
+int getLength(node* head){
+  int len=0;
+  node* temp=head;
+  while(temp!=NULL){
+    temp=temp->next;
+      len++;
+  }
+  return len;
+}
 void insertAtPosition(int position, int value, node* &head, node* tail) {
   int length=getLength(head);
 
@@ -50,6 +59,40 @@ void insertAtPosition(int position, int value, node* &head, node* tail) {
     temp->next=newnode;
   }
 }
+void deleteHead(int pos,node* &head,node* &tail){
+  if(head==NULL&&tail==NULL){
+    cout<<"List is emmpty"<<endl;
+  }else{
+
+  if(head==tail){
+    node *temp=head;
+    head=NULL;
+    tail=NULL;
+    free(temp);
+  }
+    
+  }
+}
+
+void searchElement(int val,node* head,node*tail){
+  node *ptr=head;
+  int pos=0;
+  if(val==head->data)
+  cout<<pos+1<<endl;
+  else{
+    while(ptr!=NULL){
+      if(ptr->data==val){
+        cout<<pos+1<<endl;
+      }
+      pos++;
+      ptr=ptr->next;
+    }
+  }
+  if(ptr==NULL){
+    cout<<-1<<endl;
+  }
+
+}
 
 void printLinkedList(node* head) {
   
@@ -66,14 +109,7 @@ void printLinkedList(node* head) {
   }
 }
 
-int getLength(node* head){
-  int len=0;
-  node* temp=head;
-  while(temp!=NULL){
-    temp=temp->next;
-      len++;
-  }
-}
+
 
 int main() {
     node* head = NULL;
@@ -85,5 +121,11 @@ int main() {
     insertAtTail(13,head,tail);
     insertAtTail(14,head,tail);
     printLinkedList(head);
+    insertAtPosition(3,4,head,tail);
+    printLinkedList(head);
+    searchElement(12,head,tail);
+
+
+
     return 0;
 }
