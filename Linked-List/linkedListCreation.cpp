@@ -74,7 +74,7 @@ void deleteHead(int pos,node* &head,node* &tail){
   }
 }
 
-void searchElement(int val,node* head,node*tail){
+void searchElement(int val,node* &head,node*tail){
   node *ptr=head;
   int pos=0;
   if(val==head->data)
@@ -94,6 +94,8 @@ void searchElement(int val,node* head,node*tail){
 
 }
 
+
+
 void printLinkedList(node* head) {
   
   if(head == NULL){
@@ -108,6 +110,70 @@ void printLinkedList(node* head) {
 
   }
 }
+
+void deleteElement(node* &head,node* &tail,int element){
+    
+    node* temp=head;
+    node* prev=NULL;
+
+    if(head->data==element){
+      head=head->next;
+      free(temp);
+      cout<<"Successfully deleted  at head "<<endl;
+      printLinkedList(head);
+      return;
+    }
+    while(temp!=NULL&&temp->data!=element){
+      prev=temp;
+       temp=temp->next;
+    }
+    if(temp==NULL){
+      cout<<"No element to delete"<<endl;
+    }else{
+      if(tail==temp){
+        tail=prev;
+      }
+      cout<<"Successfully deleted"<<endl;
+    prev->next=temp->next;
+    free(temp);
+     printLinkedList(head);
+    }
+
+}
+
+
+void deletePosition(node* &head,node* &tail,int position){
+  if(head==NULL){
+    return;
+  }
+  int cnt=1;
+  node* curr=head;
+  node* prev=NULL;
+  if(position==1)
+  
+  node* temp=NULL;
+  while(curr!=NULL&&cnt<position){
+    prev=curr;
+    curr=curr->next;
+    cnt++;
+  }
+   
+  
+  if(tail==curr){
+     tail=prev;
+  }
+  if(curr==head){
+    head=head->next;
+    
+  }
+  prev->next=curr->next;
+
+  free(curr);
+  printLinkedList(head);
+}
+
+
+
 
 
 
@@ -124,7 +190,9 @@ int main() {
     insertAtPosition(3,4,head,tail);
     printLinkedList(head);
     searchElement(12,head,tail);
+    deleteElement(head,tail,4);
 
+    deletePosition(head,tail,2);
 
 
     return 0;
