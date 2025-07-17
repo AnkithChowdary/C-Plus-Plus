@@ -10,6 +10,20 @@ class node{
   }
 
 };
+void printLinkedList(node* head) {
+  
+  if(head == NULL){
+    cout << "Linked List doesn't exist";
+  }else{
+    node* ptr=head;
+    while(ptr!=NULL){
+      cout << ptr->data <<"->";
+      ptr=ptr->next;
+    }
+    cout << "NULL\n";
+
+  }
+}
 void insertAtHead(int value,node* &head,node* &tail){
   node* newnode=new node(value);
   if(head == NULL && tail == NULL) {
@@ -43,7 +57,10 @@ int getLength(node* head){
 }
 void insertAtPosition(int position, int value, node* &head, node* tail) {
   int length=getLength(head);
-
+  if(position<length||position>length){
+    cout<<"Invalid position"<<endl;
+    return;
+  }
   if(position == 1) {
     insertAtHead(value, head, tail);
   }
@@ -73,6 +90,41 @@ void deleteHead(int pos,node* &head,node* &tail){
     
   }
 }
+void deleteAtHead(node* &head,node* &tail){
+  if(head==NULL){
+    cout<<"LinkedList is empty";
+  }else if(head==tail){
+
+      head=NULL;
+      tail=NULL;
+      
+    }else{
+    node* temp = head;
+    head=head->next;
+    free(temp);
+    cout<<"Deletion at head"<<endl;
+    printLinkedList(head);
+  }
+
+}
+void deleteAtTail(node* &head,node* &tail){
+  node *ptr = head;
+  if(head==tail){
+    head=NULL;
+    tail=NULL;
+    
+  }else{
+  while(ptr->next!=tail){
+    ptr=ptr->next;
+  }
+  ptr->next=NULL;
+  node *temp=tail;
+  tail=ptr;
+  free(temp);
+  cout<<"Deletion on tail"<<endl;
+  printLinkedList(head);
+}
+}
 
 void searchElement(int val,node* &head,node*tail){
   node *ptr=head;
@@ -96,23 +148,13 @@ void searchElement(int val,node* &head,node*tail){
 
 
 
-void printLinkedList(node* head) {
-  
-  if(head == NULL){
-    cout << "Linked List doesn't exist";
-  }else{
-    node* ptr=head;
-    while(ptr!=NULL){
-      cout << ptr->data <<"->";
-      ptr=ptr->next;
-    }
-    cout << "NULL\n";
 
-  }
-}
 
 void deleteElement(node* &head,node* &tail,int element){
-    
+    if(head==NULL&&tail==NULL){
+      cout<<"Linked list is emtpy"<<endl;
+      return;
+    }
     node* temp=head;
     node* prev=NULL;
 
@@ -149,7 +191,10 @@ void deletePosition(node* &head,node* &tail,int position){
   int cnt=1;
   node* curr=head;
   node* prev=NULL;
-  if(position==1)
+  if(position==1){
+    deleteAtHead(head,tail);
+    return;
+  }
   
   node* temp=NULL;
   while(curr!=NULL&&cnt<position){
@@ -193,6 +238,8 @@ int main() {
     deleteElement(head,tail,4);
 
     deletePosition(head,tail,2);
+    deleteAtHead(head,tail);
+    deleteAtTail(head,tail);
 
 
     return 0;
