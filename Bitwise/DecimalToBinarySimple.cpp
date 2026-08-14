@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-int BtoD(String n){
+int BtoD(int n){
     int r=0;
     int i=0;
     while(n>0){

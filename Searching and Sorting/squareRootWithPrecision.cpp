@@ -20,9 +20,9 @@ int mySqrt(int x) {
         }
         return ans;
     }
-    double myPrecision(int n){
+    double myPrecision(int n,int k){
         double sqrt=mySqrt(n);
-        int precison=13;
+        int precison=k;
         double step=0.1;
         while(precison--){
           double j=sqrt;
@@ -36,12 +36,12 @@ int mySqrt(int x) {
         
     }
 int main(){
-  int n;
-  cin>>n;
+  int n,k;
+  cin>>n>>k;
   int ans=mySqrt(n);
-  double ansPre=myPrecision(n);
-  cout<<"Without Precision Sqrt of "<<n<<"is: "<<ans<<endl;
-  cout<<"With Precision Sqrt of "<<n<<"is ";
-  printf("%.13f",ansPre);
+  double ansPre=myPrecision(n,k);
+  cout<<"Without Precision Sqrt of "<<n<<" is: "<<ans<<endl;
+  cout<<"With Precision Sqrt of "<<n<<" is ";
+  printf("%.*f\n",k,ansPre);
   return 0;
 }
