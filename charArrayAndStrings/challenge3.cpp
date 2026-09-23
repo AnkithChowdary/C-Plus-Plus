@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 bool isVowel(char ch){
-    return ch=='a'||ch=='e'|| ch==
+    return ch=='a'||ch=='e'|| ch=='o'||ch=='u';
 }
 int main() {
     ios::sync_with_stdio(false);
